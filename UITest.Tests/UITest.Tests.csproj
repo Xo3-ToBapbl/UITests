@@ -33,14 +33,22 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UITest.Droid\UITest.Droid.csproj">
-      <Project>{032d303d-2ffe-4d14-959f-ec6dc4545f0b}</Project>
-      <Name>UITest.Droid</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UITest.iOS\UITest.iOS.csproj">
+      <Project>{31CACAB2-3437-4ED7-80B0-F35DFA1FFADA}</Project>
+      <Name>UITest.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UITest.Droid\UITest.Droid.csproj">
+      <Project>{032D303D-2FFE-4D14-959F-EC6DC4545F0B}</Project>
+      <Name>UITest.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

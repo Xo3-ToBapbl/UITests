@@ -26,7 +26,7 @@ namespace UITest.Tests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void AfterTextDisplayed()
         {
             app.Tap(c => c.Marked("button"));
             var result = app.Query(c => c.Marked("editor").Text("AFTER"));

@@ -24,6 +24,10 @@ namespace UITest.iOS
 
             Window.MakeKeyAndVisible();
 
+            #if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+            #endif
+
             return true;
         }
 
@@ -59,5 +63,3 @@ namespace UITest.iOS
         }
     }
 }
-
-

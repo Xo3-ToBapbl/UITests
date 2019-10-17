@@ -11,18 +11,14 @@ namespace UITest.Tests
         {
             if (platform == Platform.Android)
             {
-                var path = AppDomain.CurrentDomain.BaseDirectory;
-                path = Directory.GetParent(path).Parent.Parent.Parent.FullName;
-                path = Path.Combine(path, @"UITest.Droid\bin\Release\com.companyname.uitest.droid.apk");
-
                 return ConfigureApp
                     .Android
-                    .ApkFile(path)
-                    .Debug()
                     .StartApp();
             }
 
-            return ConfigureApp.iOS.StartApp();
+            return ConfigureApp
+                .iOS            
+                .StartApp();    
         }
     }
 }
