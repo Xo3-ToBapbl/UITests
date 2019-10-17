@@ -39,12 +39,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
-    <Compile Include="ShowAfterText.feature.cs">
-      <DependentUpon>ShowAfterText.feature</DependentUpon>
+    <Compile Include="Features\FeatureBase.cs" />
+    <Compile Include="Features\ShowText.feature.cs">
+      <DependentUpon>ShowText.feature</DependentUpon>
     </Compile>
-    <Compile Include="ShowAfterTextSteps.cs" />
+    <Compile Include="Features\ShowTextFeature.cs" />
+    <Compile Include="Steps\StepsBase.cs" />
+    <Compile Include="Steps\ShowTextSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UITest.iOS\UITest.iOS.csproj">
@@ -61,9 +63,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShowAfterText.feature">
+    <Folder Include="Features\" />
+    <Folder Include="Steps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\ShowText.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ShowAfterText.feature.cs</LastGenOutput>
+      <LastGenOutput>ShowText.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using Xamarin.UITest;
-using Xamarin.UITest.Queries;
 
 namespace UITest.Tests
 {
@@ -15,10 +13,14 @@ namespace UITest.Tests
                     .Android
                     .StartApp();
             }
+            if (platform == Platform.iOS)
+            {
+                return ConfigureApp
+                    .iOS
+                    .StartApp();
+            }
 
-            return ConfigureApp
-                .iOS            
-                .StartApp();    
+            throw new PlatformNotSupportedException($"{nameof(platform)}");
         }
     }
 }
